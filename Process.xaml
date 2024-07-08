@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>797.6,2491.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1104,2851.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -41,6 +41,8 @@
       <x:String>System.Activities.DynamicUpdate</x:String>
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -77,10 +79,9 @@
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="550.4,2426.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="550.4,2786.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -88,13 +89,13 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="508.8,56" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Assignment Management - I-CUE powered by eSync Production Environment" sap:VirtualizedContainerService.HintSize="508.8,2145.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Assignment Management - I-CUE powered by eSync Production Environment" sap:VirtualizedContainerService.HintSize="508.8,2505.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="475.2,1928.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="475.2,2288.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -154,11 +155,40 @@
                 </uix:TargetAnchorable>
               </uix:NSelectItem.Target>
             </uix:NSelectItem>
-            <uix:NClick ClickType="Single" DisplayName="Click 'Perform Action'" sap:VirtualizedContainerService.HintSize="433.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://icue.uhc.com/icue/hsr.uhg" DesignTimeRectangle="968, 791, 159, 28" ElementType="Button" FriendlyName="'Perform Action'" FullSelectorArgument="&lt;webctrl name='PerformAction' tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl name='PerformAction' tag='INPUT' type='submit' aaname='Perform Action' check:text='Perform Action' /&gt;" ImageBase64="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" InformativeScreenshot="af5b24b1b654f029f53873302b783a7c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='icueApplicationWindow' title='Assignment Management - I-CUE powered by eSync Production Environment' /&gt;" SearchSteps="FuzzySelector, Image" Text="Perform Action" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='INPUT' type='submit' /&gt;" />
-              </uix:NClick.Target>
-            </uix:NClick>
+            <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="433.6,527.2" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="5" RetryInterval="00:01:00">
+              <ui:RetryScope.ActivityBody>
+                <ActivityAction>
+                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="375.2,260" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ClickType="Single" DisplayName="Click 'Perform Action'" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://icue.uhc.com/icue/hsr.uhg" DesignTimeRectangle="968, 791, 159, 28" ElementType="Button" FriendlyName="'Perform Action'" FullSelectorArgument="&lt;webctrl name='PerformAction' tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl name='PerformAction' tag='INPUT' type='submit' aaname='Perform Action' check:text='Perform Action' /&gt;" ImageBase64="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" InformativeScreenshot="af5b24b1b654f029f53873302b783a7c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='icueApplicationWindow' title='Assignment Management - I-CUE powered by eSync Production Environment' /&gt;" SearchSteps="FuzzySelector, Image" Text="Perform Action" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='INPUT' type='submit' /&gt;" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                  </Sequence>
+                </ActivityAction>
+              </ui:RetryScope.ActivityBody>
+              <ui:RetryScope.Condition>
+                <ActivityFunc x:TypeArguments="x:Boolean">
+                  <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'Button'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                    <ui:UiElementExists.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6af060f4-516b-41ba-b10c-d736d9c4b93a" InformativeScreenshot="4744038df9777c6b7d522abc75e6e6f7" Selector="&lt;wnd app='chrome.exe' title='Save As' /&gt;&lt;wnd ctrlid='1' title='&amp;amp;Save' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:UiElementExists.Target>
+                  </ui:UiElementExists>
+                </ActivityFunc>
+              </ui:RetryScope.Condition>
+            </ui:RetryScope>
             <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Double" DelayAfter="1" DisplayName="Type Into 'File name:'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,228" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="HardwareEvents" Text="[&quot;\\nas02292pn\data\OPTUM_BI_Reporting\Clinical_Quality_Tool\CCR_Reports\DUALS\&quot;+Now.ToString(&quot;ddMMMyyyy&quot;)+&quot;\&quot;+Now.ToString(&quot;HH&quot;)+&quot;th_Hour&quot;+&quot;\&quot;+in_TransactionItem.SpecificContent(&quot;Name&quot;).ToString+Now.ToString(&quot;_ddMMMyyyy_HH&quot;)]">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="169, 765, 573, 22" ElementType="InputBox" FriendlyName="'hscWorkQueueExport'" FullSelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAkEAAAAaCAYAAACw0oiwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAPOSURBVHhe7dptcqswDIXhrIsFsZ6sJpvpYriWZWNJNoGGzJ2kvM8M0wb8nR86Q3tbAAAALogQBAAALokQBAAALokQBAAALokQBAAALokQBAAALokQBAAALulJCPpZ7tNtmR/l4xs85ttyGwyY70/3NKO31f6YY+v/uU/L7ZbmWa95eeOW36Jfo1zTco8HBgAADvuvISilmlS8Y8jQefqifnb+vf5l3hC+auB4675Pymv6pAVV8n0OwisAAN/g/4agn/syxbBT7k1xrlHbX3m+/q23T0KD0Oe8ESIEAQDwfgdCUHljMvoTTH6zM34W/4SjNVzHmkzDWuC7P32FAhvH86GgrvWxzPm5BJgYguo+5Jm2c0M49rn8PgpuPiT59dn2Z/uXZxuL1X52rLLP0l7OVc7bjT8ILn7+1l/15zvL97XZHgCAz7cbgmxBdm9P4puax339vSvMqe29fIgFvRbpGHpsKNor9PXzNM0mPNTCrZ/6tfsQEq3rSq32Qkxenw0WORzW52f7l+ebIaPsvUwQx8r7TiGlBc94dqWPO48j55uE7wwAgG+yG4Ja8Uxs8d4MEvq2YLNmbwaE+PuTNzHCzT9Ya7knY7gAJELIGGkhbDC/m3u0vjb3+f7SXEKKhpn1svtZx+vHavswcvvabjR/snu+CSEIAPDFfvc/Qa546nMpyK7NbsCQolv6uCJq5rMFeHM8W7wHay33pim+5UgOhiAt+oOQ0K3PhBNz6XrO9pfmz94EqfrGJ7Zr+7DMml4+30T6EoIAAF/qRAgq8j0pwLaoHwsYsbjXz/lnLa4vF2kbgsKac99BUV/Z53ae4lBIq872b+fyTG6T1hwDDyEIAICx8yEoK4FDHmy2aTTkzMscxy8FWf7pdi3cW+PZIDEs0u2eBgQ/Rn5zslHAtX0dexBibHDY3e/Z/mU9XQIx6lkMxsr7jH2PzF/H1A+EIADAn/N6CEoFsD3zbXPhXQtokvrVf4zO8jjSJhZfCQz9/W68Ml97wzEq0v6eDzaizBWKeB+YdJwWJOoa21jD9c113LP9y5r85gwdv55Fbmv2pGPbs9H57duh1843sWEKAIAv83oIWoOMXraoilp89YphR8cevUXoC7LScNLG9PONinR/rw8EcZ312gpncqW15b37NcZx/PrO9Y97r5fsI/dz5+hDjjyfUgLN5137+oPKfn++onyPG2MCAPDJnoSg67KB4Ntru4YgG2gAAIAgBP1xhCAAAMYIQX8cIQgAgDFCEAAAuCRCEAAAuCRCEAAAuCRCEAAAuCRCEAAAuKBl+Qdmr76dvFUjTwAAAABJRU5ErkJggg==" InformativeScreenshot="819a3b9932c3050f4a852b4583d24b04.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Save As' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Text="hscWorkQueueExport" TextMethod="AttributeText" TextSelector="&lt;wnd /&gt;">
