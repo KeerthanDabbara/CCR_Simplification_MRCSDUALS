@@ -1,0 +1,138 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Initialize_Applications" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1130.4,1618.4</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Initialization_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="60">
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Management.Automation</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="24">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Management.Automation</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>TimeSpan2</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="475.2,1553.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Application Sign On - I-CUE powered by eSync" sap:VirtualizedContainerService.HintSize="433.6,1284" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="IfNotOpen" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,1067.2" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="Username" />
+              <Variable x:TypeArguments="ss:SecureString" Name="Password" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Icue" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[Password]" Username="[Username]" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'User ID:'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="333.6,228" sap2010:WorkflowViewState.IdRef="NTypeInto_1" Text="[Username]">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://icue.uhc.com/icue/index.jsp" DesignTimeRectangle="893, 225, 204, 23" ElementType="InputBox" FriendlyName="'INPUT  userID'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANAAAAAbCAYAAAANiwEDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAErSURBVHhe7dw7joMwFEbhWQI94rEZoJotZIWj6RCPNaSPshAkGuTh94RkPDJRklvmXOkrYsvpTof9MU2TA/Caa0DzPLtlWRzDMPujRtRKEJAWNG3burquXZ7nLkkSABdqQm30fe9b2SLyAamqruuiBwGEhmHwzVwD0qgubR4On+50+lpXjgAu1ITaUCNqRRMElKap3yQeIE5tqJGyLNff/wLShsQOAvh164SAgKcREGBAQIABAQEGBAQYEBBgQECAAQEBBgQEGBAQYEBAgAEBAQYEBBjsBqRPtLXBdQYg7u51hr8X6s7n73Ul/ifAO7p7oY4r3cDjxnEMr3Rvj4oooqqqXJZl0YPAuyqKwjVN499D0ASPimwRqSqGYfZHjWzxBAEBeB4BAS+b3A9Xra8YplzbQwAAAABJRU5ErkJggg==" InformativeScreenshot="e3aa84efb5f2aaaa9814067f256a715e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='icueApplicationWindow' title='Application Sign On - I-CUE powered by eSync' /&gt;" SearchSteps="FuzzySelector, Image">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="782, 221, 107, 30" ElementType="Text" FriendlyName="'User ID:'" FullSelectorArgument="&lt;webctrl parentid='box' tag='TABLE' /&gt;&lt;webctrl idx='1' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='box' tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' aaname='User ID:' check:text='User ID:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAG8AAAAiCAYAAABRA4fSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAF9SURBVGhD7ZfLFYMgEEUtkKqohE7ohC5YE+SjCKgxh5i85C3uQmAQ5g4cnay1jmBCecBQHjCUBwzlAUN5wFAeMJQHDOUBQ3nAUB4wh/K0nNwklDNNn3FK+D6pq/b7CGubCpa1aCfL9gXhlGnnQQZWXsAoJxopUZ5QpmizzigRJX56zQP5G3mBMH6nD5CB8jrXVSV3qf5u/zpnOU7qNb7hqjxPd09J6seL8SKD5PUS5tuK2Haueo70fJD4hhfkWS39O6qYv5aXNr97SrpJ9oRESqfDcy3zCUbJA2XQyVtPTaCOCQkr+jdQ3qsM/2AJMVlMjt2csD3ukbe/JzwO5cUPh17ST6p7pqzws2s1cIO8p9aBw6G8nIg6ofF0FVLnpFTVXIuPMZ1EL3Fvlpev7t78Seqld38BJ/JmUlLnzWWaa6czpnNim18Fz5rka/I21/PMEpcKrqGWXPC78si3QnnAUB4wlAcM5QFDecBQHjCUBwzlAUN5wFAeMJQHi3UP43dR7izyD1QAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" Text="User ID:" TextMethod="AttributeText" TextSelector="&lt;webctrl type='' tag='TD' /&gt;" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Password:'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="333.6,228" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" SecureText="[Password]">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://icue.uhc.com/icue/index.jsp" DesignTimeRectangle="893, 254, 204, 23" ElementType="InputBoxPassword" FriendlyName="'INPUT  password'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='password' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='password' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANAAAAAbCAYAAAANiwEDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACFSURBVHhe7dMxCoRAAATBe/X+fGMPg5MVDkU7rYKJJu7PnHMzs3cTkFmYgMzCTgGNMczsZmszR0D7AdxbIxIQPCQgCAQEgYAgEBAEAoJAQBAICAIBQSAgCAQEgYAgEBAEAoJAQBAICAIBQSAgCAQEwd+AfhGZ2fXWZk4BmdmzCcjs9eb2Bd1kH7EViYP/AAAAAElFTkSuQmCC" InformativeScreenshot="3a868d69fe94bf47076f7d3c98224732.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='icueApplicationWindow' title='Application Sign On - I-CUE powered by eSync' /&gt;" SearchSteps="FuzzySelector, Image">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="782, 251, 107, 30" ElementType="Text" FriendlyName="'Password:'" FullSelectorArgument="&lt;webctrl parentid='box' tag='TABLE' /&gt;&lt;webctrl isleaf='1' tableRow='2' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='box' tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' aaname='Password:' check:text='Password:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAG8AAAAiCAYAAABRA4fSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIWSURBVGhD7ZTNbSpBEIRJiCggBSIgARIgFALgypkcIAbOXDmP9aFXVtGaYS1ZtmleHz5pd/pnp6tmdna73VqRkzIvMWVeYsq8xJR5iSnzElPmJabMS0yZl5gyLzFl3hc4Ho9tuVy2y+XSjf8VT83b7XZtNps98IpD/DRpzYub3m63bT6ft9Pp9JD7zryNeTyzRsxz35m3Me96vbb1en2/gTLSf6u9Wxl/vzFnFNe3/KCwThxBvZ488nmP+4ozqMfhcLjXxRx6q3aqBzpo7bf51s3jmeE9zjBe0+vBmsSfitPPjSGGmC4az3qnD/08To0fGAnva6Nc6N28dObpJsRBHIZaLBafwzOcix+Zirtw+j41WgOenx0Gr+NdwqtGqBc9fL1n3iswaV78fUShNbDn+MllcI9FwabifhhgtVq18/n8aZjHyR8dBl8nt2feaJ33lOY92zRDIbif1CimryPMM5N6cd0aviFYxwwgz80q8/4xZV5PKATomSdkBrVfjbOPzWZzR30lKLkyVLlxz7HnyCRqqP0vzItxiYQwEhnBXAwJJMGn4kCc20hvHRR9K95i1UfzfU8j84A6n0n9fA3Uw7/z23zLPGDz+tUxzH6/f7h5Et7pGTOKgwSM66P9KV/9RsL3zAOfiVpmGvV4WfOK16bMS0yZl5gyLzFlXmLKvMSUeYkp8xJT5iWmzEtMmZeYMi8tt/YBQMzjXLkgzrUAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" Text="Password:" TextMethod="AttributeText" TextSelector="&lt;webctrl type='' tag='TD' /&gt;" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ClickType="Single" DisplayName="Click 'Sign On'" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://icue.uhc.com/icue/index.jsp" DesignTimeRectangle="923, 316, 92, 28" ElementType="Button" FriendlyName="'Sign On'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='SUBMIT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='SUBMIT' aaname='Sign On' check:text='Sign On' /&gt;" ImageBase64="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" InformativeScreenshot="5e3bcc6150dc65de098a3922cb0a0fd7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='icueApplicationWindow' title='Application Sign On - I-CUE powered by eSync' /&gt;" SearchSteps="FuzzySelector, Image" Text="Sign On" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='INPUT' type='SUBMIT' /&gt;" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ClickType="Single" DisplayName="Click 'HSC Assignment'" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://icue.uhc.com/icue/login.uhg" DesignTimeRectangle="68, 417, 228, 18" ElementType="Text" FriendlyName="'HSC Assignment'" FullSelectorArgument="&lt;webctrl id='3' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='3' tag='A' type='' aaname='HSC Assignment Management' check:text='HSC Assignment Management' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOgAAAAWCAYAAADKMdARAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAARXSURBVHhe7ZlRdqMwDEWzwKwqK8lO2El2kY+etGVs2cbSk2wMSVOmRx/3zAC2/CzpASWn+/0+Oz/Jx3w9z/Pp8jCuOU4fN+gbuF2/59Ppa56Ma47Tww36JqZLeIqeMufP+WaMcRzEDeo4B8YN6jgHxg3qOAeGGfQxX8LfR+frhxhA3D7nc7h2meD89FX/rmKYMayxW75sZg2n0/d8vRnXnyLt3b+0Jsrfy/06+kevd7DboKmIhlliAeEjiD02m2Lwgwl9CT1/kw5To9Nh20899YOWNmHvmrMDuuG1Hzo7DdoZC6SfGNoCpuuIQVODxfWoQfwr6EZ2GPTyueR8uUZ98DVf/Wej1/G7Bn3Rj/R8E80N5Scyh6+7vCJXqn5bZ7q5sPHhCS5uDkXLJGPLvJSbyyOtsYxLDS7XGNkXjBnQUJ969nUkGTTkgmJXI5bz+nddI/eoc+khGLuSc2sMQdrqGKqNummM5C7MwViUm77OiNIqxtSekvlnGo2exD0og8rBEv2KG+g+zVLMXjOMQGst61gxG+fKHHWDyeeWhGqDpv3JZEkdgVJYfk6tlWOL5ijnpGbV+JZuWpPF2qLBaDIL2ieN5XmN/0/r2gY1cmXsRc/TORB1zPN0nqTZnsodz0s5t6JT9YLKca0x12D3kNwL56mPRKkIQLdR9mAXcdM6K0lQyW3EU+uacVOsqhePEypWBOJVo7AxGG+DBh3Lhq9bdE7xX34ODKmgHDJdvR5a0SXHNPqU8lA1jecO95HiS52QP9xbQcRr5BzXNOtXecqgSCpcELUI6MQcxUqi0pOTQWsHsPGzjuV6o3DL+UbSftygovCwJ0A22ZgGvW8byxB8DdugkGOYs8WgtY8YZUyrF0WfbMmdvY+uTpqn4yZAA+Yc1zTrV3mpQQmx4LbGsKDEiAQwjLhivDIqFG6ZDzobSfsNg5r14GzQMFoHNA1qVQYlDaBV7KUcrxk06wTTiDEbDDqWO7nWuEFxHtLIOc6lY91rhX0GDceX1uZhwVTMtoD+V1w7WRHVJMjKxuV8SCY2F5/zNoPmpsAxyAYNqlkaoEERzL2pE3OIPZQZMZ/U0+gJysOKJgTmJAYM2tApaeQc1zTrV9lt0HhsFwVFZaFKRFqvl8SuCbmm+H+II+bGJECiZAExmfmYx7T2bCY3zX2FQe18prlLLYY0DDZsRhpCg3XRdcr5M/bSbXyrB2l/Ug/NEevlXuLnhnPH40QGDFqOrZ5u9lQG12zkpfDEK25JiqS10JJoDooXNDZoXi8NwbEKyBDNaq0FMcN4+lDC5w2ZA48TQwYlrDyzvQ1piMg4Zp0zWw0aSQ1bCHroZx+ma8igddwSK1yz9Mj1gpaO2eq4PLZc78xZ1RlIeZDxse4qj8aaMo68xgzqrGEVyTkG5g3vD+AGbRALLu6iK68izhsJTyHr7aD3VvC/4gZtYL2+uDkPAr0mytr8RXNG3KCOc2DcoI5zWO7zP7N+qY6FpkEyAAAAAElFTkSuQmCC" InformativeScreenshot="6b6907bcc141b67d846bb2f6d3a2b650.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='icueApplicationWindow' title='Home - I-CUE powered by eSync Production Environment' /&gt;" SearchSteps="FuzzySelector, Image" Text="HSC Assignment Management" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='A' type='' /&gt;" />
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAOCSURBVFhH7djZTuMwFAZgHmlecEbsdKUL3XfWB0LiAgmpSIiB0kIRaOiS0jP+HTtL40xjh5mrsfQrSavWHyeNFzb+t7/VLi4u6Pz8nM7OznhOT0/p5AQ5oePjY+ohvR51uz3qdLvU6XSojbTb1Gq1qdlqUbPZpAZLvdGger2B98elUumb6CJeA+7z8zM0C28WIs75wnNc0HK5JPzB/dtb4L8GiaoBYlkWz1xmbmc2n4uw8xk7Iux6ys9n/DjlxxlHAvj29kb9fp9VtRUfaQOXMYE2UgLf399pPB7Tzc0Nbvs4l4uBxG8uUEGBM63g6+srvby80HA4pOvra6rW6gyZM0PigZDA1eqFAZ2qTdXA5+dnGo1G9PT0RA8PD3R1dUWVatUMiacVQBVu7uD0gIANBgOOu7+/p7u7O7q8vKRypTIW3UZvGEo40Aezo8LhGigODQFmMhll8oUCiW6jN4xzKqCLQ1RAiRNAYFkGuK2PrHo8j6yKj/STZTgcUS5vAmSDsB8oUTJBHI+o3oQfXSCu3UxpMpnSB4tlLRgwrw/EDIGB14+S8eAkjMfGuecqnA0ETgIPcwZATF9BIG6xH4fXAeJQ1vkq7k/Vk8DsYc4AyOZVGyhQIbAgzg/048KAh/pATPyYT30omYi4ddWTwEzWBMhWJT6guM0uJIgDIhwXDkxns/pALJnkb9CLQmy0gIjXTHAOMGMAxHoOFVSiEPG6HVy77wVxSDgwlc4YANlCEzOAA0J8KE/VDHE20KJkOq0PxErYW0ElKiYOwTyfTBkAsUznFVzFeMMAcXAfHxMOTKRSBkC2h1ACWcfrYch63C8BPEgaAGv1evA36IkaJbMGxwKcA0wk9YHVWs0BqhGqMJgGTgL3EwkDYLVGFgOqIatxYetw8tb6gAcGQLYUjwDUgCErOAnc2z/QB5YrKqAAeVCRYJMgTAbAXTNgRQCDoGgoEQXKGw7c29cHlsplPg0pO40aBWg1AO4YAUsxgApIWADc3t3TBx6VSvpABWBdOHBnVx9YPIoKnBjBZADcMgMehQBtUByUNwBubu/oAwtFAK0vg4TFGJgvFvmHVV/6lUEfP7a2DYCFAv/wv8j3zS19IP4dgR0/NtXYt2JriN0XNjjYQ2CZjpUwFptYz2HJhFUJJn7MrZi+MENgEMY4h6EETyseCNxSBJUDzgj4v0VqGxu/Af19epyRUejIAAAAAElFTkSuQmCC" InformativeScreenshot="b805ac0fc0ad1761fe458e7492db7813.png" Selector="&lt;html app='chrome.exe' htmlwindowname='icueApplicationWindow' title='Application Sign On - I-CUE powered by eSync'/&gt;" Url="https://icue.uhc.com/icue" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

@@ -1,0 +1,97 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CloseAllApplications" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1130.4,1020" sap2010:WorkflowViewState.IdRef="CloseAllApplications_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Do the necessary procedures for ending the process (e.g., logout) and close the used applications." DisplayName="Close All Applications" sap:VirtualizedContainerService.HintSize="475.2,955.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log message (close applications)" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Closing applications...&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: Assignment Management - I-CUE powered by eSync Production Environment" sap:VirtualizedContainerService.HintSize="433.6,685.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="Never" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,468.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ClickType="Single" DisplayName="Click 'Tools'" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://icue.uhc.com/icue/assignmentManagement.uhg" DesignTimeRectangle="432, 160, 71, 40" ElementType="Text" FriendlyName="'Tools'" FullSelectorArgument="&lt;webctrl aaname='Tools  ' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Tools  ' tag='A' type='' check:text='Tools' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEsAAAAsCAYAAAAtv0UIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGoSURBVGhD7dQhT8NAGMbx+yBYFAkWBwokAYNBDjTDMEVCUGAwYIaY5hMQDASHRewbYJoQzAT2yCNe8u64NX26ZuvY0+QvuLtec7+1hKir8iUs4gr3b99RVUtYRMIiEhaRsIiERSQsImERCYtIWETCIhIWkbCIhEXUOqyz/nNcWV2Plw/v2fl5VgmrczGIIYTSdo/Ps/eyLTxWGmA29zrx7vUrOz9NwiJaGqz0c8Xffh4BARi2Jt0nh4Xn+X3XNrbjzdPH7/ykrgaPsdfrlYY1uXtzNYYFGH9IHAaHwlpbY1AeEfP+8ClW7lkHJ9djmGWVgTFQqBEsg0nfpCoHT+/192Ad1nvwOuXAWCjUCJa9MTioX+fHJx08HU+BgWifnx9n82B1oFDrsSyMT4sGpLpQqNWfoa3xTXrWLGr1P3jsv3N4OgZne2Cdjc2qxrAQEOxTQblf3w5ra9J90jcr3RPNAwrVwlrWKmFt7R/9+XV9ty+f2fv+W3qziIRFJCwiYREJi0hYRMIiEhaRsIiERSQsImERheFwGFW1wmg0iotct9uNRVHMoCL+AB6CfS1e04NDAAAAAElFTkSuQmCC" InformativeScreenshot="b99246b0ee6e688977b070c62b2afdda.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='icueApplicationWindow' title='Assignment Management - I-CUE powered by eSync Production Environment' /&gt;" SearchSteps="FuzzySelector, Image" Text="Tools" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='A' type='' /&gt;" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ClickType="Single" DisplayName="Click '1 Sign Off'" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://icue.uhc.com/icue/assignmentManagement.uhg" DesignTimeRectangle="433, 210, 203, 33" ElementType="Text" FriendlyName="'1 Sign Off'" FullSelectorArgument="&lt;webctrl aaname='1 Sign Off' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='1 Sign Off' tag='A' type='' check:text='1 Sign Off' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAM8AAAAlCAYAAADlXr27AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAMqSURBVHhe7ZvLbfJAFIXdE2VkzRYKgA7oghZoAAgvESkLJFhRA++3kFgi2Ex0/M9Fw/w2A5aDMTmfZAWu7esxnM8eIvC2263q9/tqt9spQsht4MlgMFDwxttsNur7+1udz2e9mhASxul08n2BN7483W5XryKEuIAvvjzr9Vp1Oh1dJoS4gC/wxlutVqrdbusyIcQFfIE33nK5VK1WS5cJIS7gC7zxFouFajabukwIcQFf4I03n89Vo9HQZUKIC/gCb7zZbKY+Pz91mRDiAr7AG286nap6va7LhBAX8AXeeJPJhPIQ8gDwBd5QHkIe5CLPeDxWtVpNl8mzqFarKpPJ+Eu5XPZro9FIfXx8+LV8Pq8Oh4NfJ68FfIE3icqDAJVKJXU8HnXFzXA4vITOXNALoBd6Pto3DszwyyJimGC7XC7n/xVk3HIe5HW5yIM3MAl5cFXF1fWRkCOICKcZOgChkpDFRO4kGIsgQth3kaCLRpBQ5DWBL3ifni6PSCNX5ntDL/u94pUZryGkDhqbCGTegfDYviNBOk7V0sFFnkKhoLLZrC4/FwToN+QJ6mtP94rF4lVYRYCvr68rue2QB4Ex3Qq+uR6PzXHgmL1e77/p3j3nSZLhIg++Wp3Ut6ofkQdgewTLtY/dF0G0p3t24EUes4a/eO4Ksus8pLdM6YK2xzp7jOQ1SaU8QAQyF7uH2TdMAHuaZAdcQC8sYeAYONatbSjPe3GRB79LSOonCUEhehRIAYFMEcy+YVLEJQ9wnQfleS+QubeQB9jBM/uGSYHnccljTwFt7PWUJ92kTh4MFh/mg7glDwKL4P6mPLIvXlQbjAFjMXsEnTflSQ+plAfhsreX+q1w4rkpiggVlzwALyimj6ZAIo55HGCPD1Ce9JCYPBJc8wO//ZkljLB9gwJvhxM12R495F/ScckDpIc5tqB9g8ZHedLDS9x5kgQvgB1gQu7h6fLs9/urK3LYUqlU9B7xgau6OZ2SO5hZI+Re/tSdB/LYklIcEpU/JQ8hcUJ5CIkI5SEkIpSHkIhQHkIiQnkIiQjlISQilIeQiFAeQiJCeQiJyD95RuoHfnsB4S7H05IAAAAASUVORK5CYII=" InformativeScreenshot="1c6faf45a67d33786e5601427d6636b6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='icueApplicationWindow' title='Assignment Management - I-CUE powered by eSync Production Environment' /&gt;" SearchSteps="FuzzySelector, Image" Text="1 Sign Off" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='A' type='' /&gt;" />
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAOCSURBVFhH7djZTuMwFAZgHmlecEbsdKUL3XfWB0LiAgmpSIiB0kIRaOiS0jP+HTtL40xjh5mrsfQrSavWHyeNFzb+t7/VLi4u6Pz8nM7OznhOT0/p5AQ5oePjY+ohvR51uz3qdLvU6XSojbTb1Gq1qdlqUbPZpAZLvdGger2B98elUumb6CJeA+7z8zM0C28WIs75wnNc0HK5JPzB/dtb4L8GiaoBYlkWz1xmbmc2n4uw8xk7Iux6ys9n/DjlxxlHAvj29kb9fp9VtRUfaQOXMYE2UgLf399pPB7Tzc0Nbvs4l4uBxG8uUEGBM63g6+srvby80HA4pOvra6rW6gyZM0PigZDA1eqFAZ2qTdXA5+dnGo1G9PT0RA8PD3R1dUWVatUMiacVQBVu7uD0gIANBgOOu7+/p7u7O7q8vKRypTIW3UZvGEo40Aezo8LhGigODQFmMhll8oUCiW6jN4xzKqCLQ1RAiRNAYFkGuK2PrHo8j6yKj/STZTgcUS5vAmSDsB8oUTJBHI+o3oQfXSCu3UxpMpnSB4tlLRgwrw/EDIGB14+S8eAkjMfGuecqnA0ETgIPcwZATF9BIG6xH4fXAeJQ1vkq7k/Vk8DsYc4AyOZVGyhQIbAgzg/048KAh/pATPyYT30omYi4ddWTwEzWBMhWJT6guM0uJIgDIhwXDkxns/pALJnkb9CLQmy0gIjXTHAOMGMAxHoOFVSiEPG6HVy77wVxSDgwlc4YANlCEzOAA0J8KE/VDHE20KJkOq0PxErYW0ElKiYOwTyfTBkAsUznFVzFeMMAcXAfHxMOTKRSBkC2h1ACWcfrYch63C8BPEgaAGv1evA36IkaJbMGxwKcA0wk9YHVWs0BqhGqMJgGTgL3EwkDYLVGFgOqIatxYetw8tb6gAcGQLYUjwDUgCErOAnc2z/QB5YrKqAAeVCRYJMgTAbAXTNgRQCDoGgoEQXKGw7c29cHlsplPg0pO40aBWg1AO4YAUsxgApIWADc3t3TBx6VSvpABWBdOHBnVx9YPIoKnBjBZADcMgMehQBtUByUNwBubu/oAwtFAK0vg4TFGJgvFvmHVV/6lUEfP7a2DYCFAv/wv8j3zS19IP4dgR0/NtXYt2JriN0XNjjYQ2CZjpUwFptYz2HJhFUJJn7MrZi+MENgEMY4h6EETyseCNxSBJUDzgj4v0VqGxu/Af19epyRUejIAAAAAElFTkSuQmCC" InformativeScreenshot="3797f586b700a660913392259a56d1ee.png" Selector="&lt;html app='chrome.exe' htmlwindowname='icueApplicationWindow' title='Assignment Management - I-CUE powered by eSync Production Environment'/&gt;" Url="https://icue.uhc.com/icue/assignmentManagement.uhg" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
